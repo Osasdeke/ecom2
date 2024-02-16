@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- ICONS LINK-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Ecommerce Website</title>
+</head>
+<body class="dark  day" id="dark">
+
+    <style>
+            *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
+        }
+
+        /**ACTIVATE DARK MOOD**/
+
+        #dark-button:active{
+            transform: scale(1.4);
+        }
+
+        #day-button:active{
+            transform: scale(1.4);
+        }
+
+        #dark-button{
+            color: red;
+            
+            margin-top: 15px;
+            margin-left: 70px;
+
+        }
+        #day-button{
+            background-color: white;
+            margin-top: 15px;
+            margin-left: 70px;
+            display: none;
+
+        }
+
+
+
+
+
+        
+        #obs{
+            
+            margin-left: -30px;
+            color: rgba(235, 235, 235, 0.548)
+            
+        }
+
+        .container{
+            width: 1130px;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+
+
+        .header{
+            display: flex;
+            justify-content:space-between;
+        }
+            
+
+        .first-header{
+            display: flex;
+            justify-content:space-between;
+            width: 40px;
+            margin-bottom: 20px;
+                
+        }
+
+        #burger-menu{
+            display: none;
+        }
+
+        #sidebar{
+            display: none;
+        }
+
+
+        .nav-bar-container{
+            display: none;
+
+        }
+
+        .second-header{
+            margin-top: 10px;
+        }
+        .cart{
+            margin-right: 20px;
+        }
+
+        .left{
+            margin-left: 50px;
+            margin-top: 13px;
+        }
+
+        .mobile-preview{
+            display: none;
+        }
+
+        .content{
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 50px;
+
+        }
+        .radius{
+            border-radius: 10px;
+
+            }
+            .little{
+                margin-left: 10px;
+                margin-top: 10px;
+            }
+
+        p{
+            max-width: 430px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
+            color: black;
+        }
+
+        .opacity{
+            opacity: 40%;
+            
+        }
+
+
+
+        .right-content{
+            margin-top: 50px;
+        }
+
+        h3{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        h1{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        .flex-amt{
+            display: flex;
+            justify-content: left;
+            margin-top: 25px;
+
+            }
+
+            .discount{
+                margin-left: 10px;
+                background-color: rgba(240, 219, 195, 0.671);
+                padding-left: 8px;
+                padding-right: 8px;
+                padding-top: 6px;
+                
+                font-size: 17px;
+                color: orange;
+                border-radius: 7px;
+                font-weight: bolder;
+            }
+
+        .add-to-cart{
+            display: flex;
+            justify-content: space-between;
+            
+            
+            margin-top: 30px;
+
+        }
+        #quantity{
+            color: black;
+        }
+
+        #quantity, #increament{
+            
+            font-size: 26px;
+            font-weight: bolder;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-right:10px ;
+        }
+        #increament, #decreament{
+            font-size: 26px;
+            font-weight: bolder;
+            margin-right: 15px;
+            color: orange;
+            
+            background-color: rgb(243, 243, 243);
+            padding-left: 10px;
+
+        }
+
+        #decreament:active{
+            background-color: rgb(243, 243, 243);
+            transform: scale(0.9);
+        }
+
+        #decreament:hover{
+            cursor: pointer;
+        }
+
+
+        #increament:active{
+            background-color: rgb(243, 243, 243);
+            transform: scale(0.9);
+        }
+        #increament:hover{
+            cursor: pointer;
+        }
+
+
+        .volume{
+            background-color: rgb(243, 243, 243);
+            border-radius: 10px;
+            
+        }
+
+        button{
+            border: none;
+            
+
+            padding: 10px;
+        }
+
+        .add{
+            
+            border-radius: 6px;
+            padding-left: 55px;
+            padding-right: 55px;
+            border:none;
+            background-color: rgb(255, 175, 27);
+            cursor: pointer;
+            color: aliceblue;
+        }
+
+        .add:hover{
+            opacity: 70%;
+        }
+
+
+        button:active{
+            transform: scale(0.96);
+            
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        i{
+            color: white;
+            margin-right: 10px;
+        }
+
+        .add-to-cart>i{
+            color: white;
+        }
+
+        .sneaker{
+            color: orange;
+        }
+
+        .price{
+            font-size: 28px;
+        }
+
+        .prev-price{
+            text-decoration: line-through;
+            opacity: 40%;
+            font-weight: bolder;
+        }
+
+        hr{
+            opacity: 30%;
+        }
+
+        /*** CART COUNTER | to be regulated with javascript**/
+
+
+
+        #counter{
+            
+            display: ;
+            position: absolute;
+            top: 16px;
+            
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
+            
+            margin-left: 10px;
+            background-color: orange;
+            
+            padding: 2px;
+            border-radius: 100%;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
+
+
+
+        /*Cart
+        Set cart pop display to zero    | 
+        to be regulated with javascript    */
+
+        .cart:hover{
+            cursor: pointer;
+        }
+
+        .cart-display{
+            
+            display: none;  /* flex */
+            position: absolute;
+            top: 69px;
+            width: 320px;
+            
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
+            
+            margin-left: 810px;
+            
+            background-color: white;
+            box-shadow: 0 0 3px 3px rgb(201, 200, 200);
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        /* WILL DISPLAY WHEN ITEM IN CART*/
+        .cart-display.active{
+            display: flex;
+        }
+
+
+
+
+
+
+
+        .cart-diaplay-flex{
+            display: flex;
+            justify-content: right;
+        }
+
+        .cart-main{
+            text-align: center;
+        }
+
+        .cart-main>hr{
+            margin-bottom: 10px;
+        }
+
+        .cart-main>h3{
+            text-align: left;
+            padding: 10px;
+            padding-left: -50px;
+            margin-bottom: 20px;
+
+        }
+
+        #img-in-cart{
+            padding-right: 10px;
+            
+            border-radius: 5px;
+        }
+
+        #cart-summary{
+            margin-left: -63px;
+            margin-top: -10px;
+        }
+
+        #amtOfSelectedItems{
+            font-weight: bolder;
+        }
+
+
+
+
+        .delete{
+            margin-left: 10px;
+            background-color: white;
+            color: antiquewhite;
+        }
+        .delete:hover{
+            cursor: pointer;
+        }
+        .delete:active{
+            transform: scale(1.4);
+        }
+
+
+
+        button>i{
+            color: rgb(71, 71, 71);
+            
+        }
+
+
+
+        #checkout{
+            text-align: left;
+            padding: 30px;  
+        }
+
+
+        #checkoutbtn{
+            padding: 20px;
+            background-color: orange;
+            padding-left: 100px;
+            padding-right: 100px;
+            border-radius: 5px;
+        }
+
+        #checkoutbtn:hover{
+            cursor: pointer;
+        }
+
+
+
+        /* Empty Cart | to be regulated with javascript */
+
+
+        .empty{
+            
+            display: none; /*  block*/
+            position: absolute;
+            top: 69px;
+            width: 320px;
+            
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
+            
+            margin-left: 810px;
+            
+            background-color: white;
+            box-shadow: 0 0 3px 3px rgb(201, 200, 200);
+            z-index: 1;
+            
+            border-radius: 5px;
+        }
+
+        /* WIIL DISPLAY THIS WHEN CART IS EMPTY*/
+
+        .empty.active{
+            display: block;
+        }
+
+
+
+
+
+        .empty-cart-diaplay-flex{
+            display: flex;
+            justify-content: right;
+        }
+
+        .empty-cart-main{
+            text-align: center;
+        }
+
+        .empty-cart-main>hr{
+            margin-bottom: 10px;
+        }
+
+        .empty-cart-main>h3{
+            text-align: left;
+            padding: 10px;
+            
+            margin-bottom: 20px;
+        }
+
+
+
+
+        #empty-checkoutbtn{
+            padding: 20px;
+            background-color: orange;
+            padding-left: 100px;
+            padding-right: 100px;
+            border-radius: 5px;
+        }
+
+        .under{
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .empty-cart-main>p{
+            margin-top: 40px;
+            margin-bottom: 130px;
+        }
+
+        /****CHANGE PROF PIC**/
+
+        .change-prof-pic{
+            display: none;
+            position: absolute;
+            top: 69px;
+            width: 320px;
+            height: 100px;
+            
+            
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
+            
+            margin-left: 810px;
+            
+            background-color: white;
+            box-shadow: 0 0 3px 3px rgb(201, 200, 200);
+            z-index: 1;
+            
+            border-radius: 5px;
+
+        }
+
+        .change-prof-pic.active{
+            display: block;
+        }
+
+        .prof-pic-main{
+            padding: 20px;
+            text-align: center;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        /** underline headers when hovered on **/
+
+        .left:hover{
+            border-bottom: 4px solid red;
+            transition: 0.1s;
+            scroll-behavior: smooth;
+        }
+
+        /**WHEN HOVERED ON THUMBNAILS*/
+
+        .r:hover{
+            opacity: 40%;
+            border: 3px solid rgb(255, 38, 0);
+            transition: 0.0s;
+            cursor: pointer;
+        }
+
+
+
+        /**BIG POP PREVIEW WHEN BIG IMAGE IS CLICKED*/
+
+
+        #screen:hover{
+            transform: scale(1.2);
+            
+        }
+
+
+        /***MOBILE VIEW***/
+
+
+        @media (max-width: 575px) {
+            .header{
+                background-color:  ;
+                
+            }
+
+            /***NAV BAR*****/
+
+            .nav-bar-container{
+                display: block;
+            }
+
+            .nav-bar{
+                display: none;    
+
+
+                margin-top: -20px;
+                position: absolute;
+                background-color: aliceblue;
+                height: 100%;
+                width: 100%;
+                padding: 30px;
+                margin-left: -50px;
+                z-index: 1;
+            }
+
+            li{
+                list-style: none;
+                margin-top: 30px;
+                margin-left: 30px;
+                text-align: left;
+                font-size: 25px;
+                color:black;
+                font-weight: bolder;
+                
+            }
+
+            .open-bar{
+                position: absolute;
+                color:black;
+                margin-top: 15px;
+                margin-left: 5px;
+                
+                font-size: 20px;
+                cursor: pointer;
+            }
+            .close-bar{
+                position: absolute;
+                color:black;
+                font-size: 18px;
+                top: 6%;
+                right: 10%;
+                z-index: 2;
+                cursor: pointer;
+            }
+            .open-bar:active{
+                transform: scale(0.9);
+            }
+            .close-bar:active{
+                transform: scale(0.9);
+            }
+
+
+            @keyframes slide-in {
+                0%{
+                    transform:translateX(-20%);
+                }
+                
+                100%{
+                    transform:translateX(0) ;
+                }
+            }
+            
+            @keyframes slide-out {
+                0%{
+                    transform:translateX(0);
+                }
+                
+                100%{
+                    transform:translateX(-100%) ;
+                }
+            }
+            
+            /* ADD ANIMATION TO THE SLIDE BAR*/
+
+
+            
+            .nav-bar.active{
+                animation: slide-in 0.08s ease-out;
+
+            }
+            
+            .nav-bar:not(.active){
+                animation: slide-out 0.3s ease-in-out forwards;
+            
+            }
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            #img-in-cart{
+                width: 60px;
+            }
+            .cart:hover{
+                cursor: pointer;
+            }
+
+            .container{
+                width: 375px;
+                
+                
+                
+            }
+
+            .content{display: block;
+            }
+            .opacity{
+                display: none;
+            }
+
+            .mobile-logo{
+                
+            }
+
+            .second-header{
+                
+                
+                width: 20px;
+                margin-right: 80px;
+            }
+
+            #cart-basket{
+                position: absolute;
+                width: 20px;
+                margin-left: 5px;
+                
+                
+                
+            }
+            .profile-pic{
+                position: absolute;
+                right:30px;
+                top: 22px;
+                width: 25px;
+            }
+
+            .first-header:first-child{
+                margin-left: 40px;
+            }
+            .header-rule{
+                display: none;
+            }
+            
+            /*HIDE DESKTOP IMAGES*/
+            .image-preview {
+                display: none;            
+            }
+            
+
+            .mobile-preview{
+                display: block;
+                margin-top:-80px;
+                margin-bottom: -40px;
+            }
+            .slides{
+                display: block;
+            }
+            .radius{
+                border-radius: 0px;
+            }
+
+            #burger-menu{
+                display: block;
+            }
+            
+            .burger{
+                position: absolute;
+                left: 30px;
+                top: 35px;
+
+            }
+
+            .burger:active{
+                transform: scale(0.9);
+            }
+            .burger:hover{
+                cursor: pointer;
+            }
+
+            .cart-display{
+            
+                display: none;  /* flex */
+                position: absolute;
+                top: 85px;
+                width: 330px;
+                
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
+                
+                margin-left: 20px;
+                
+                background-color: white;
+                box-shadow: 0 0 1px 1px rgb(201, 200, 200);
+                z-index: 1;
+                border-radius: 5px;
+            }
+            
+
+            .empty{
+            
+                display: none; /*  block*/
+                position: absolute;
+                top: 85px;
+                width: 330px;
+                
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
+                
+                margin-left: 20px;
+                
+                background-color: white;
+                box-shadow: 0 0 1px 1px rgb(201, 200, 200);
+                z-index: 1;
+                
+                border-radius: 5px;
+            }
+
+            .change-prof-pic{
+                top: 85px;
+                width: 330px;
+                margin: auto;
+                height: 200px;
+                
+                
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
+                
+                margin-left: 20px;
+                
+                background-color: rgb(255, 255, 255);
+                box-shadow: 0 0 3px 3px rgb(201, 200, 200);
+                z-index: 1;
+                
+                border-radius: 5px;
+
+            }
+            .change-prof-pic p{
+                font-size: 13px;
+                margin-top: 10px;
+                color: red;
+            }
+            
+
+            .arrow{
+                position: absolute;
+                padding: 20px;
+                background-color: white;
+                border-radius: 100%;
+                height: 56px;
+                color: black;
+                width: 50px;
+                font-weight: bolder;
+            }
+            .arrow:active{
+                transform: scale(0.9);
+            }
+
+            .arrow:hover{
+                cursor: pointer;
+            }
+
+            .arrow1{
+                top: 200px;
+                left: 20px;
+            }
+            .arrow2{
+                top: 200px;
+                right: 20px;
+            }
+
+            .right-content{
+                width: 330px;
+                margin-left: 20px;
+            }
+
+            .prev-price{
+                position: absolute;
+                left: 280px;
+                top: 640px;
+                font-size: 20px;
+            }
+
+            .add-to-cart{
+                display: block;
+            }
+
+            .volume{
+                display: flex;
+                text-align: center;
+                justify-content: space-between;
+            }
+
+            #quantity{
+                margin-top: 8px;
+                color: black;
+            }
+            .add-to-cart:last-child{
+                text-align: center;
+                margin-top: 25px;
+                
+            }
+            
+            .add{
+                
+                border-radius: 6px;
+                padding: 20px;
+                padding-left: 119px;
+                padding-right: 119px;
+                border:none;
+                background-color: rgb(255, 175, 27);
+                cursor: pointer;
+                color: aliceblue;
+                margin-bottom: 40px;
+                margin-top: 20px;
+            }
+            .slides {
+                display: none;
+            }
+
+            #screen{
+                display: block;
+            }
+            img {
+                width: 100%;
+            }
+
+
+
+            /*DARK MOOOD**/
+
+            #obs{
+
+            }
+        
+
+
+            #screen:hover{
+                transform: none;
+            }
+            
+
+
+                /**ACTIVATE DARK MOOD**/
+
+            #dark-button:active{
+                transform: scale(1.4);
+            }
+
+            #day-button:active{
+                transform: scale(1.4);
+            }
+
+
+            #dark-button{
+                display: block;
+                width: 30px;
+            }
+            
+            #day-button{
+                display: none;
+                width: 30px;
+                
+            }
+
+
+        }
+
+
+
+
+
+
+
+
+    </style>
+
+
+    <div class="main">
+        <div class="container" >
+
+
+            
+            <div class="nav-bar-container">
+
+                <i  id="open" class="fa fa-bars open-bar"></i>
+                
+                <div id="nav-bar" class="nav-bar">
+                    <ul class="ul">
+                        <i id="close" class="fa fa-times close-bar"></i>
+                        <a href=""><li>Collections</li></a>
+                        <a href=""><li>Men</li></a>
+                        <a href=""><li>Women</li></a>
+                        <a href=""><li>About</li></a>
+                        <a href=""><li>Contact</li></a>
+                    </ul>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+            
+            <div class="header">
+                <div class="first-header" >
+                    <a href="#"><h1 id="white" class="dark">Sneakers</h1></a>
+                    
+                    
+
+                    <a href="#"><p class="left opacity dark day" id="white">Collections</p></a>
+                    <a href="#"><p class="left opacity dark day"id="white">Men</p></a>
+                    <a href="#"><p class="left opacity dark day"id="white">Women</p></a>
+                    <a href="#"><p class="left opacity dark day"id="white">About</p></a>
+                    <a href="#"><p class="left opacity dark day"id="white">Contact</p></a>
+                    <img class="day-button day" id="day-button" src="https://i.pinimg.com/564x/a6/4a/87/a64a87b27554ec6850029672e1c2ccf2.jpg" width="15px" height="15px" alt="">
+                    <img class="dark-button  dark" id="dark-button" src="https://cdn-icons-png.flaticon.com/512/6714/6714978.png" width="15px" height="15px" alt=""> 
+                
+                </div>
+
+                <div class="second-header">
+                    
+                    <img class="cart" id="cart-basket" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOwAAADVCAMAAABjeOxDAAAAgVBMVEX///8AAABMTEzKysqlpaXs7OxycnL7+/v4+PiwsLDT09PNzc20tLSoqKjx8fH09PQhISHk5OS6urra2tqMjIyQkJAUFBSXl5dnZ2eCgoI2NjZtbW2GhoZ8fHzg4OBTU1MrKytcXFxDQ0MNDQ0uLi4cHBxHR0c0NDSdnZ08PDzCwsJrFXZNAAAJEUlEQVR4nO2da3/yLAyH7bSez2edOp1zU7//B3zmtlv/6QFogUL6eL30p5K0EEISoFKpVPqt6fZGrTZuNyrl5hwg79NJ07VE9pgGUfazkWuhLDGJ6XqjvnMtlxVWicoGwaqMnfkjRdlgfnUtmnmGacoGwca1bMZ5S1c2eCtbV24JlA0uA9fiGUbQj79n3ZK9291RpO2na/EMM9iItN26Fs844Y12tbtKmIh6roWzx2Q1j2obupbJIv2oT/XiWiKrtPdU26prgawyoJ7G3rU8ljkQbUvoJRMuqOy7a2ksE5JXO3EtjmWIz7xwLY1tLv+jflwZ46sta1DqH010Hctuj1OjUyw5ncUR8Y5rAc2yF/r4I9fiGWYtfLUX+R+woitS9uBaOsMcRMrGEyO8GYqUvbqWzjAfImXbrqUzTF2kbCiMO/JjLFI2PQ/Ek75QWVFqhB8Xoa6VGXz164UhbxgqnYmVxYUPyyVtE3M7bfF30RyzDKhWQYG5JG3VxC5fjHhm2YL8r7Iv49zDMJ/XeAf5W7JvoznuFCGeWci6TRpsWWR5Mv5Ry2RzuvDtaQHSGWaZSXwskuKXlh5gL1YYhazNMa7ahgr2FT0QdnlaX
+                    I8LF+5/YK9nZ47RfRKGZP5YZPy+T2SbeCo048OtlKQHsguDFP/YwQ+4ecfoEUlWPL+gd7y3K5txsBcr2ZsGBit4ZbdIuFDtJ2iOJQtCz8BU1VLtJ1j9xssc48Sj6NezNcdkO4A41HYHzbGKF+INOPGoFg5gIcma0/odJx7VBVtzzdMch+jVK1tWNMeMKoQwkz5XrodHc8yoGjdTqO0OmuOVRenM0sBEunpACU244tzsAZlXPH8/g3DqBxtzjKG2LPEk7BCKk7N70Kxm2YuFExYXc0xSGVlceo7mOGuo7Q6m8rjszsMXlMnJbef9oUNOIHOmtRp6xydb0pkl58RzA/eC8Jh7cMWzz/bTl5yWzR0osVKo7QE/c4y9OGNof5z/ObkhR6jtDrvKihyhtjsDjQflBLSomVPoqCwDc0xCbZlTj8wqK3DikVS1JYCFbgwqKzLneAgYrPDfOw7RV8zuF6A59r+yglS15Th6An5+NC+dYXDiUQ+1PcBCN98rK7JVtSVwYGSONVY8v3CqrMBzy3IZGE6x42xVbQkwqqwgobZcQw7/QanuxB244jnl8m0bX5qDvjiyVrUl8Ap/4XewAjOVOW3pVP8vikF74qnQumOvKys0Qm132FRW6K14fuFSWdHQnngqkdyux+YYVzz5I0hMKit0Qm0PmMSOtUJtdzB27K93nKeqTfI3/lZW5KlqSyBkUVlxAGV1tiFxqKzQDLU9wIfmqznGqraTzimv6B37ao7zVbUlgObY0115OavaEmBQWWFixfMLg8qKvFVtCaBzYkY40+StakuAVGb3ah6CvVgznIKpPO/JF2p7MJY34Q+6JpTVEUK6cbKGvAl/0I4vuFYgA8IjvZQ4uFZBHf1qLUbmWD+t2pU34gvauqZc7OMjJlZlrnVQxUiM7CRvxwfMVGqho33uVP3EVBQF
+                    KyvEp/qVAE6VFdowqqzQB+uOPa+s0KfBdJN0PvhUVhiATWWFCdhUVpiATWWFCTB2PPQ1u2UKUspbeguF5rj0gxYz295maU2BForHtjwdyJ0Rvu8W0IXcpV32xQC9eavsHfmVaHt2LY5dItfasDyVXZ0l1bZe6gmoT5UNTqVe/sTumL60SjwHHaLafk9C52s79APDyg6EN2o7583sCsX3pI/ZCbEqb9ApZm8s9Fxb/cQ7wfOevDOrbfgub9Idxm/e9LnqwPyN3pMXeauOsFHXf/10rVUywivh8tNZypsunKFOxbyQQbfu2e15F7uuev/aq73W/WBq3jg9efLkyZMnT548eaJKWO32vhm3G7ZbGnR+Wuq23WxEb4xxh+56ZrGs5LqBE4GGxTv8o1VsgbXuWXnq4XQebWm4KDKp1t/GVL2xN3/CaDM54HU8Wx84/2ilLto/DYcyr/u0ltbFHIzYqKcJcMPoy52KWioiHd6UxI0NllscxC1Ziq4BfWkmz9gmgousJeslo1IJjL1byXst4N0qSGCo/Do+tyVgddzW5O3fMLCN4Cpv5YZFmzySt/7Dm3ZLTcUk/5e9+fYQbev9PK5Wu5uYZNodOdaJvxbd75ZmH9HPrXXkTqShzT0C3448hrXmA492ofrdWZnQSrvgaMtzpOmdTzIyIxuKNV/thvzZniwyqnTPp6VXS2s1l5GXNyE+pF7dKrm
+                    ZIniJvLyQ+JBDO6OWVOHGJ3RagKBlkMkxIOtYao6c62Uh/3xDVl9NKuBqOi2RcZmwL5aUsVi536Ap1QUT8lquHLaU6H3iWmSv01IaOM0n3ymgc1sOQmxxYs6VDBkbGWj0nlJ2u0iFVAOHbIqlw22fNrwojE6kVOAc4CsadgMfa8phDLZvYEGrkRKQQCk1Zlo0+ymPFV++li1MARftKaE19Cw0lMU+lBK0RGfOkbI4+Wgoi7Y25UAGnHxsKIvdOMX6GOrG+DcpQx/7kA1lFQzUUv4VFRQMFJ6cYcNAoQgpJ2uie6zhL+JrS3FO0Juz4S+iyzBP/IaZc8FVnAqyD9JGIoJsdUnsOnhAo9bBlthS4hIOh5SdG6LwGpCkK6zIWkWrXJ8snBPGA/EW7exdRqOQcGI3Xe5qLfFIJOA9tmAdkAWt8XrqH+iCNfpAQ3zxOa7gQ+jifRkZlAMcLsHRUsjtQGUgAYRIsERzOqBZwhfSTSbkqVo7cjmy9WNeuz/yUSSHmeke7gR29O+CR0K2H81hWiu7jZbLH+vdzq5drcXqyrV3E71G/3HZ6kwmndZb9HN7x1Op7nPRG7E3QnkjP+S52FAVYcL0gYH6ip68lRtWD1lT2ghhZEtcrCMnYfd8kEGsmiOOoUTiWt6S7VMV5INJP6v1izy39WW9KGokebdadxYQml/ilj4LKAAbCMetyRMsGsK9QwWd57NIFWBoeG2ZbpOPhR0vsIvN7b9sjHesMOXlFnpwROcQf9YrK4cURhOyP6oWfbvM6Eycx9exNV8mrJEnu2y5OQ6k3epNt9tFb2z94MlJtzfbbme9bs56wf8A02t+4NBxV3wAAAAASUVORK5CYII=" width="25px" alt=""> <div id="counter">0</div>
+                    <a href="#"><img id="prof-pic" class="profile-pic" src="https://p7.hiclipart.com/preview/89/979/768/businessperson-business-man-desktop-wallpaper-foreign-man.jpg" width="25px" alt=""></a>
+                    
+                    
+                </div>
+
+        
+            </div>
+
+
+
+
+
+
+
+            <!----SET DISPLAY FOR CART ITEMS-->
+
+            <div class="cart-display" id="cart-display">
+                <div class="cart-main">
+                    <h3>Cart</h3>
+                    <hr>
+                
+                    <div class="cart-diaplay-flex">
+                        <img id="img-in-cart" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ87DUtku1hml2Zs4_v3KpUC15hpkmJ0LJVWG15HXNyF6tliSESl6srlT2BAtUxiTiaWss&usqp=CAU" width="60px" height="45">
+                        <div class="under">
+                            <p>Fall Limited Edition Sneakers</p><br>
+                            <p id="cart-summary">$125.00 x  <span id="selectedQuantity"> </span>    <span id="amtOfSelectedItems"> </span></p>
+    
+                        </div>
+                        <button class="delete" id="trashButton"><i class="fa fa-trash"></i></button>
+                        
+                        
+                    </div>
+                    <div id="checkout">
+
+                        <button id="checkoutbtn">Checkout</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!----SET DISPLAY FOR EMPTY CART-->
+
+
+            <div class="empty" id="empty">
+                <div class="empty-cart-main">
+                    <h3>Cart</h3>
+                    <hr>
+                
+                    <div class="empty-cart-diaplay-flex">
+                        
+                    </div>   
+                    <p>Your cart is empty.</p>             
+                </div>
+
+            </div>
+
+            
+                <!----CHANGE PROFILE PICTURE-->
+
+                <div class="change-prof-pic">
+                    <div class="prof-pic-main">
+                        <form action="/upload" method="post" enctype="multipart/form-data">
+                            <label for="image">Select an image:</label>
+                            <input type="file" id="new-image" name="image" accept="image/*">
+                            <br>
+                            <input id="upload" type="submit" value="Upload">
+                            <p>Pls Note: Profile picture can only be changed once(for security reasons)</p>
+                        </form>
+                        
+                    </div>
+                </div>
+
+
+
+
+
+
+
+<!----------------------PRODUCT IMAGES-------------------------------->
+
+            <hr class="header-rule" >
+
+            <div class="content" id="container"  >
+
+                <div class="image-preview">
+                    <img class="radius" id="screen" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ87DUtku1hml2Zs4_v3KpUC15hpkmJ0LJVWG15HXNyF6tliSESl6srlT2BAtUxiTiaWss&usqp=CAU" width="442px" height="320px" alt="">
+
+                    <div class="img-thumbnail">
+
+
+
+                        <img class="radius r" id="img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ87DUtku1hml2Zs4_v3KpUC15hpkmJ0LJVWG15HXNyF6tliSESl6srlT2BAtUxiTiaWss&usqp=CAU" width="100px" alt="">
+                        <img class="radius r " id="img2" src="https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/64/8182552/1.jpg?9078" width="100px" alt="">
+                        <img class="radius r little" id="img3" src="https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/29/0283522/1.jpg?4357" width="100px" alt="">
+                        <img class="radius r little" id="img4" src="https://5.imimg.com/data5/MT/MB/EO/SELLER-14290347/men-555-black-fashion-lace-up-shoes-500x500.jpg" width="100px" alt="">
+
+                    </div>                    
+                </div>
+
+
+
+
+
+                <!---FOR MOBILE DEVICE-->
+                <div class="mobile-preview" >
+                    <img class="radius Slides mobile-screen" id="screen" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ87DUtku1hml2Zs4_v3KpUC15hpkmJ0LJVWG15HXNyF6tliSESl6srlT2BAtUxiTiaWss&usqp=CAU" width="375px" height="320px" alt="">
+
+                    <div class="img-thumbnail ">
+                        
+                        <img class="radius   Slides" id="img2" src="https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/64/8182552/1.jpg?9078" width="375px" height="320px" alt="">
+                        <img class="radius   Slides" id="img3" src="https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/29/0283522/1.jpg?4357" width="375px" height="320px" alt="">
+                        <img class="radius   Slides" id="img4" src="https://5.imimg.com/data5/MT/MB/EO/SELLER-14290347/men-555-black-fashion-lace-up-shoes-500x500.jpg" width="375px" height="320px" alt="">
+
+                        <a class="prev arrow arrow1" id="arrow1" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next arrow arrow2" id="arrow2" onclick="plusSlides(1)">&#10095;</a>
+                    </div>                    
+                </div>
+
+
+
+
+
+                <!---FOR MOBILE DEVICE-->
+
+
+
+            
+
+                
+
+
+
+
+
+
+
+
+
+                <div class="right-content">
+
+                    <div class="product-info">
+                        <h3 class="sneaker">SNEAKER COMPANY</h3>
+                    </div>
+    
+                    <h1 class=" dark  day">Fall Limited Edition Sneakers</h1>
+                    <p class="day dark">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+                        durable rubber outer sole, they'll withstand everything the weather can offer.
+                    </p>
+                    
+                    <div class="flex-amt">
+
+                        <h3 class="price">$125.00</h3> 
+                        <span class="discount">50%</span>
+                    </div>
+                    <p class="prev-price dark day">$250.00</p>
+
+    
+                    <div class="add-to-cart">
+                        <div class="volume">
+                             <button id="decreament"> - </button> <span id="quantity">0</span> <button id="increament"> + </button>
+                        </div>
+                        
+                        <button class="add" id="addToCart" type="button"><i class="fa fa-shopping-cart"></i> Add to cart</button>
+                        
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        const decrease = document.getElementById("decreament");
+        const increase = document.getElementById("increament");
+        var cartBasketCounter = document.getElementById("counter");
+        var quantityCounter = document.getElementById("quantity");
+        var cart = document.getElementById("addToCart");
+        var selectedQuantity = document.getElementById("selectedQuantity");
+        var amtOfSelectedItems = document.getElementById("amtOfSelectedItems");
+        var cartBasket = document.getElementById("cart-basket");
+        var cartDisplay = document.getElementById("cart-display");
+        var emptyCart = document.getElementById("empty");
+
+
+
+
+        let minAmtOfProduct = 125;
+
+
+        var size =0;
+
+        increase.addEventListener("click", function(){
+            size ++;
+            quantityCounter.textContent =size;
+            
+
+            console.log(`${size} item(s) selected`);
+            
+
+        })
+
+
+
+        decrease.addEventListener("click", function(){
+            size  --;
+            if(size < 1){
+                size = 0;        
+            }
+            quantityCounter.textContent= size;
+            
+
+            
+            console.log(`${size} item(s) selected`);
+
+        })
+
+
+        cart.addEventListener("click", function(){
+            console.log(`${size} item(s) were added to your cart`);
+            alert(`${size} item(s) were added to your cart`)
+            cartBasketCounter.textContent= size;
+
+            //UPDATE CART COUNTER
+            
+
+            //quantity that will be displayed in the cart summary
+            selectedQuantity.textContent =(` ${size}`);
+            amtOfSelectedItems.textContent= (` = $${size *  minAmtOfProduct}`)
+
+            //set the quantitycounter back to 0
+            size = 0;
+            quantityCounter.textContent= size;
+        })
+
+
+
+
+
+
+
+        //DISPLAY ADDED TO CART ITEMS WHEN CART BASKET IS CLICKED
+
+
+
+        //set cart to display empty when nothing is selected
+
+        cartBasket.addEventListener("click", function(){
+            var cartItems = parseInt(cartBasketCounter.textContent);
+            if( cartItems === 0){
+                emptyCart.classList.toggle("active")
+                
+                console.log("cart is empty")
+            }
+            
+            else{
+                cartDisplay.classList.toggle("active");
+                console.log("cart has items")
+            }
+        })
+
+
+        //create a function to remove cart display when outside of the cart is clicked
+
+        const wholePage = document.getElementById("container");
+
+        wholePage.addEventListener("click", function(){    
+            cartDisplay.classList.remove("active")
+            emptyCart.classList.remove("active")
+            console.log("Working")
+        })
+
+
+
+
+
+
+        //REMOVE ITEMS WHEN TRASH BUTTON IS CLICKED
+
+        var trashButton = document.getElementById("trashButton");
+
+        trashButton.addEventListener("click", function(){
+            
+            cartDisplay.classList.remove("active")
+            clearBasket()
+            console.log("cart is empty")
+        })
+
+        //Checkout button
+
+        var checkoutbtn = document.getElementById("checkoutbtn");
+        checkoutbtn.addEventListener("click", function(){
+            console.log("Your Order has been placed successfuly, check your email for your tracking information")
+            alert("Your Order has been placed successfuly, check your email for your tracking information");
+            cartDisplay.classList.remove("active")
+            clearBasket()
+            console.log("cart is empty")
+        })
+
+
+
+
+        //create a function to clear the cart basket counter
+
+        function clearBasket(){
+            cartBasketCounter.textContent = 0;
+
+        }
+
+        //SET IMAGE CLICKS
+
+        var cartImg = document.getElementById("img-in-cart")
+        var screen = document.getElementById("screen");
+        var image1 = document.getElementById("img1");
+        var image2 = document.getElementById("img2");
+        var image3 = document.getElementById("img3");
+        var image4 = document.getElementById("img4");
+
+        image1.addEventListener("click", function(){
+            screen.src = image1.src;
+            cartImg.src = image1.src;
+            screen.style.display =block;
+        })
+
+        image2.addEventListener("click", function(){
+            screen.src = image2.src;
+            cartImg.src = image2.src;
+            screen.style.display =block;
+        })
+
+        image3.addEventListener("click", function(){
+            screen.src = image3.src;
+            cartImg.src = image3.src;
+            screen.style.display =block;
+        })
+
+        image4.addEventListener("click", function(){
+            screen.src = image4.src;
+            cartImg.src = image3.src;
+            screen.style.display =block;
+        })
+
+
+
+        //******SLIDES** */
+
+
+
+
+
+
+        /////NAV BAR////////////
+
+        const openBtn = document.getElementById("open")
+        const closeBtn = document.getElementById("close")
+        const navBar = document.getElementById("nav-bar")
+
+        /*
+        openBtn.addEventListener("click", ()=>{
+            
+        })
+        closeBtn.addEventListener("click", ()=>{
+            navBar.style.display = "none"
+            
+        })
+        */
+
+
+        openBtn.addEventListener("click", ()=>{
+            navBar.classList.add("active")
+            console.log("click")
+            navBar.style.display = "block"
+        })
+
+
+        closeBtn.addEventListener("click", ()=>{
+            navBar.classList.remove("active")
+            console.log("click22")
+        })
+
+
+
+
+
+
+
+
+
+        /*//////////////////////////////////////////////////
+        SLIDES FOR MOBILE DEVICES
+        *///////////////////////////////////////////////////
+
+
+        
+        function showSlides(n) {
+            let i;
+            const slides = document.getElementsByClassName("Slides");
+            if (n > slides.length) {
+                
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+        
+
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+            
+        }
+
+        var mobileScreen = document.querySelector(".mobile-screen")        
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+            cartImg.src = mobileScreen.src
+        }
+        
+
+
+        
+
+
+        var arrow1 = document.getElementById("arrow1")
+        arrow1.addEventListener("click",()=>{
+            if(mobileScreen){
+                console.log("arrow1")
+            }
+
+            else{
+                console.log("none")
+            }
+
+        })
+
+
+
+        
+        /*** SET DARK MOOD */
+        const turnDark = document.getElementById("dark");
+        const darkButton = document.getElementById("dark-button");
+        const textColor = document.getElementById("white");
+        const turnWhite = document.getElementsByClassName('dark');
+        const dayButton = document.getElementById("day-button");
+
+
+        darkButton.addEventListener("click", function(){
+            console.log("dark")
+
+            turnDark.style.backgroundColor ="black";
+            
+
+            for (const white of turnWhite){
+                white.style.color ="white";
+                dayButton.style.display = "block"
+                openBtn.style.color ="white"
+
+            }
+        })
+
+        dayButton.addEventListener("click", function(){
+            turnDark.style.backgroundColor ="white";
+            
+                for (const white of turnWhite){
+                    white.style.color ="black";
+                    dayButton.style.display = "none"
+                    openBtn.style.color ="black"
+            
+                }
+
+        })
+
+
+        /***CHANGE PROFILE PICTURE ***/
+
+        var defaultProfPic = document.querySelector(".profile-pic")
+        var changePicDiv = document.querySelector(".change-prof-pic")
+        var newImg = document.getElementById("new-image")
+        var upload = document.getElementById("upload")
+
+        defaultProfPic.addEventListener("click", ()=>{
+            changePicDiv.classList.toggle("active")
+        })
+
+
+
+        upload.addEventListener("click", (e)=>{
+            changePic()
+            e.preventDefault()
+        })
+
+        function changePic(){
+            if (newImg.files.length > 0) {
+                // Get the first selected file
+                var selectedFile = newImg.files[0];
+
+                // Create a URL for the selected file
+                var imgUrl = URL.createObjectURL(selectedFile);
+
+                // Set the source of the profile picture to the selected file
+                defaultProfPic.src = imgUrl;
+
+                console.log("upload")
+                changePicDiv.style.display ="none"
+            }
+            
+
+        }
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+
+    
+</body>
+</html>
